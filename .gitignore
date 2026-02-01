@@ -1,0 +1,4 @@
+.env
+tmp
+persistence/
+repomix-output.xml

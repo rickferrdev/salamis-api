@@ -1,0 +1,2 @@
+# Salamis API ⭐
+Salamis-API is a flexible API designed as a dedicated study project to showcase and refine my proficiency with MongoDB. I chose this database for its inherent flexibility and its ability to handle dynamic documents, allowing for the efficient representation of diverse entities such as long-form and short-form posts.
