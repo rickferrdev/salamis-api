@@ -14,6 +14,7 @@ type Env struct {
 func NewEnv() (*Env, error) {
 	var env Env
 
+	// Load .env file variables into the environment
 	dotenv.Collect()
 
 	if err := dotenv.Unmarshal(&env); err != nil {
