@@ -10,8 +10,12 @@ type TokenPayload struct {
 	UserID uint
 }
 
+type TokenizerOutput struct {
+	Token string
+}
+
 type Tokenizer interface {
-	Generate(userID uint) (string, error)
+	Generate(userID uint) (*TokenizerOutput, error)
 	Verify(token string) (*TokenPayload, error)
 }
 
