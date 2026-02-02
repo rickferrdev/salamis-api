@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/rickferrdev/salamis-api/compare/v1.3.0...v1.4.0) (2026-02-02)
+
+
+### Features
+
+* implement password hashing and JWT handling ([#9](https://github.com/rickferrdev/salamis-api/issues/9)) ([2f90fb6](https://github.com/rickferrdev/salamis-api/commit/2f90fb67fae29f24c22c0fa898fbfa869dd612a6))
+
 ## [1.3.0](https://github.com/rickferrdev/salamis-api/compare/v1.2.0...v1.3.0) (2026-02-02)
 
 
