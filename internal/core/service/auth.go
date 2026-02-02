@@ -23,10 +23,6 @@ func NewAuthService(tokenizer ports.Tokenizer, hasher ports.Hasher, storage port
 }
 
 func (u *authService) Login(ctx context.Context, input ports.AuthInput) (*ports.AuthOutput, error) {
-	if err := ctx.Err(); err != nil {
-		return nil, err
-	}
-
 	receive, err := u.storage.FindUserByEmail(ctx, input.Email)
 	if err != nil {
 		if errors.Is(err, ports.ErrRecordNotFound) {
@@ -59,18 +55,14 @@ func (u *authService) Login(ctx context.Context, input ports.AuthInput) (*ports.
 
 	return &ports.AuthOutput{
 		User: ports.UserOutput{
-			Nickname: receive.Username,
-			Username: receive.Nickname,
+			Username: receive.Username,
+			Nickname: receive.Nickname,
 		},
 		Token: token.Token,
 	}, nil
 }
 
 func (u *authService) Register(ctx context.Context, input ports.AuthInput) (*ports.AuthOutput, error) {
-	if err := ctx.Err(); err != nil {
-		return nil, err
-	}
-
 	hash, err := u.hasher.Generate([]byte(input.Password))
 	if err != nil {
 		return nil, err
