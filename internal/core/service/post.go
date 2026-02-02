@@ -34,22 +34,21 @@ func (u *postService) Publish(ctx context.Context, post ports.PostInput) (*ports
 	}
 
 	return &ports.PostOutput{
-		ID:    createdPost.ID,
-		Title: createdPost.Title,
+		ID:      createdPost.ID,
+		Title:   createdPost.Title,
+		Content: createdPost.Content,
+		Author:  ports.UserOutput{},
 	}, nil
 }
 
 func (u *postService) Delete(ctx context.Context, id uint) error {
-	success, err := u.repository.DeletePostByID(ctx, id)
+	err := u.repository.DeletePostByID(ctx, id)
 	if err != nil {
 		if errors.Is(err, ports.ErrRecordNotFound) {
 			return ports.ErrPostNotFound
 		}
-	}
 
-	if success == nil {
-		return ports.ErrPostNotFound
+		return err
 	}
-
 	return nil
 }
