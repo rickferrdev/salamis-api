@@ -17,17 +17,17 @@ type AuthService interface {
 }
 
 type PostService interface {
-	Publish(ctx context.Context, post domain.PostDomain) (*PostOutput, error)
+	Publish(ctx context.Context, post PostInput) (*PostOutput, error)
 	Delete(ctx context.Context, id uint) error
 }
 
 type PostStorage interface {
 	CreatePost(ctx context.Context, post domain.PostDomain) (*domain.PostDomain, error)
-	FindPostByID(ctx context.Context, id uint) (*domain.PostDomain, error)
+	DeletePostByID(ctx context.Context, id uint) (*domain.PostDomain, error)
 }
 
 type ProfileService interface {
-	UpdateProfile(ctx context.Context, profile domain.ProfileDomain) (*ProfileOutput, error)
+	UpdateProfile(ctx context.Context, profile ProfileInput) (*ProfileOutput, error)
 	GetProfileByUserID(ctx context.Context, userID uint) (*ProfileOutput, error)
 }
 
