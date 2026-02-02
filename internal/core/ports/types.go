@@ -31,6 +31,7 @@ type PostInput struct {
 }
 
 type PostOutput struct {
+	ID      uint
 	Title   string
 	Content string
 	Author  UserOutput
