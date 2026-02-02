@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/rickferrdev/salamis-api/compare/v1.2.0...v1.3.0) (2026-02-02)
+
+
+### Features
+
+* add environment configuration structure and loading function ([#7](https://github.com/rickferrdev/salamis-api/issues/7)) ([a21883f](https://github.com/rickferrdev/salamis-api/commit/a21883fc146c846ea541d7b96ea82e6972d07cd1))
+
 ## [1.2.0](https://github.com/rickferrdev/salamis-api/compare/v1.1.0...v1.2.0) (2026-02-02)
 
 
