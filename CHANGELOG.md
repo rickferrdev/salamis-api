@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/rickferrdev/salamis-api/compare/v1.1.0...v1.2.0) (2026-02-02)
+
+
+### Features
+
+* **ports:** add Tokenizer, Hasher, and Response interfaces for authentication and HTTP handling ([#5](https://github.com/rickferrdev/salamis-api/issues/5)) ([5cec0d3](https://github.com/rickferrdev/salamis-api/commit/5cec0d36342a2b0781f5b87643ce9840a981e43c))
+
 ## [1.1.0](https://github.com/rickferrdev/salamis-api/compare/v1.0.0...v1.1.0) (2026-02-02)
 
 
