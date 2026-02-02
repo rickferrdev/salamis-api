@@ -23,7 +23,7 @@ type PostService interface {
 
 type PostStorage interface {
 	CreatePost(ctx context.Context, post domain.PostDomain) (*domain.PostDomain, error)
-	DeletePostByID(ctx context.Context, id uint) (*domain.PostDomain, error)
+	DeletePostByID(ctx context.Context, id uint) error
 }
 
 type ProfileService interface {
