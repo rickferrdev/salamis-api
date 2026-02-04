@@ -1,7 +1,7 @@
 package domain
 
 type UserDomain struct {
-	ID       uint
+	ID       string
 	Email    string
 	Nickname string
 	Username string
@@ -12,6 +12,6 @@ type UserDomain struct {
 
 type ProfileDomain struct {
 	Status      string
-	AvatarURL   string // relation 1:1
+	AvatarURL   string
 	Description string
 }
