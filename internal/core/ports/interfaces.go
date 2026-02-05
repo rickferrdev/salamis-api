@@ -6,9 +6,12 @@ import (
 	"github.com/rickferrdev/salamis-api/internal/core/domain"
 )
 
-type AuthStorage interface {
+type UserRepository interface {
 	Create(ctx context.Context, user domain.UserDomain) (*domain.UserDomain, error)
+	FindByID(ctx context.Context, id uint) (*domain.UserDomain, error)
+	UpdateByID(ctx context.Context, id uint, user domain.UserDomain) (*domain.UserDomain, error)
 	FindUserByEmail(ctx context.Context, email string) (*domain.UserDomain, error)
+	DeleteByID(ctx context.Context, id uint) error
 }
 
 type AuthService interface {
@@ -21,7 +24,7 @@ type PostService interface {
 	Delete(ctx context.Context, id uint) error
 }
 
-type PostStorage interface {
+type PostRepository interface {
 	CreatePost(ctx context.Context, post domain.PostDomain) (*domain.PostDomain, error)
 	DeletePostByID(ctx context.Context, id uint) error
 }
@@ -31,7 +34,7 @@ type ProfileService interface {
 	GetProfileByUserID(ctx context.Context, userID uint) (*ProfileOutput, error)
 }
 
-type ProfileStorage interface {
+type ProfileRepository interface {
 	UpdateProfile(ctx context.Context, profile domain.ProfileDomain) (*domain.ProfileDomain, error)
 	FindProfileByUserID(ctx context.Context, userID uint) (*domain.ProfileDomain, error)
 }
