@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/rickferrdev/salamis-api/compare/v1.4.0...v1.5.0) (2026-02-05)
+
+
+### Features
+
+* implement user authentication and post/profile management services ([#12](https://github.com/rickferrdev/salamis-api/issues/12)) ([d05c19a](https://github.com/rickferrdev/salamis-api/commit/d05c19a167bd1031c00fea0026ff8a088a17a96b))
+
 ## [1.4.0](https://github.com/rickferrdev/salamis-api/compare/v1.3.0...v1.4.0) (2026-02-02)
 
 
