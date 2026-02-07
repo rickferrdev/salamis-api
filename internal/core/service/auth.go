@@ -11,10 +11,10 @@ import (
 type authService struct {
 	tokenizer ports.Tokenizer
 	hasher    ports.Hasher
-	storage   ports.AuthStorage
+	storage   ports.UserRepository
 }
 
-func NewAuthService(tokenizer ports.Tokenizer, hasher ports.Hasher, storage ports.AuthStorage) ports.AuthService {
+func NewAuthService(tokenizer ports.Tokenizer, hasher ports.Hasher, storage ports.UserRepository) ports.AuthService {
 	return &authService{
 		hasher:    hasher,
 		tokenizer: tokenizer,

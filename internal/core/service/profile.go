@@ -9,10 +9,10 @@ import (
 )
 
 type profileService struct {
-	storage ports.ProfileStorage
+	storage ports.ProfileRepository
 }
 
-func NewProfileService(storage ports.ProfileStorage) ports.ProfileService {
+func NewProfileService(storage ports.ProfileRepository) ports.ProfileService {
 	return &profileService{
 		storage: storage,
 	}
