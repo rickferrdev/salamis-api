@@ -25,16 +25,16 @@ type ProfileOutput struct {
 
 // Post related DTOs
 type PostInput struct {
-	Title    string
-	Content  string
-	AuthorID uint
+	Title   string
+	Content string
+	User    string
 }
 
 type PostOutput struct {
-	ID      uint
+	ID      string
 	Title   string
 	Content string
-	Author  UserOutput
+	User    UserOutput
 }
 
 // Auth related DTOs

@@ -20,9 +20,9 @@ func NewPostService(repository ports.PostRepository) ports.PostService {
 
 func (u *postService) Publish(ctx context.Context, post ports.PostInput) (*ports.PostOutput, error) {
 	newPost := domain.PostDomain{
-		Title:    post.Title,
-		Content:  post.Content,
-		AuthorID: post.AuthorID,
+		Title:   post.Title,
+		Content: post.Content,
+		UserID:  post.User,
 	}
 
 	createdPost, err := u.repository.CreatePost(ctx, newPost)
@@ -37,12 +37,12 @@ func (u *postService) Publish(ctx context.Context, post ports.PostInput) (*ports
 		ID:      createdPost.ID,
 		Title:   createdPost.Title,
 		Content: createdPost.Content,
-		Author:  ports.UserOutput{},
+		User:    ports.UserOutput{},
 	}, nil
 }
 
-func (u *postService) Delete(ctx context.Context, id uint) error {
-	err := u.repository.DeletePostByID(ctx, id)
+func (u *postService) Delete(ctx context.Context, postID string) error {
+	err := u.repository.DeletePostByID(ctx, postID)
 	if err != nil {
 		if errors.Is(err, ports.ErrRecordNotFound) {
 			return ports.ErrPostNotFound

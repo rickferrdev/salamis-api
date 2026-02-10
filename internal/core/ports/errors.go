@@ -22,8 +22,10 @@ var (
 
 // database record errors
 var (
-	ErrRecordNotFound      = errors.New("record not found")
-	ErrConstraintViolation = errors.New("constraint violation")
+	ErrRecordNotFound       = errors.New("record not found")
+	ErrConstraintViolation  = errors.New("constraint violation")
+	InternalError           = errors.New("an unexpected database error occurred")
+	ServiceUnavailableError = errors.New("database is unreachable")
 )
 
 // context errors

@@ -41,7 +41,7 @@ func (u *profileService) UpdateProfile(ctx context.Context, profile ports.Profil
 	}, nil
 }
 
-func (u *profileService) GetProfileByUserID(ctx context.Context, userID uint) (*ports.ProfileOutput, error) {
+func (u *profileService) GetProfileByUserID(ctx context.Context, userID string) (*ports.ProfileOutput, error) {
 	exists, err := u.storage.FindProfileByUserID(ctx, userID)
 	if err != nil {
 		if errors.Is(err, ports.ErrProfileNotFound) {

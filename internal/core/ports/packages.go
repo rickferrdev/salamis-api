@@ -7,7 +7,7 @@ import (
 
 // JWT Tokenizer
 type TokenPayload struct {
-	UserID uint
+	UserID string
 }
 
 type TokenizerOutput struct {
@@ -15,7 +15,7 @@ type TokenizerOutput struct {
 }
 
 type Tokenizer interface {
-	Generate(userID uint) (*TokenizerOutput, error)
+	Generate(userID string) (*TokenizerOutput, error)
 	Verify(token string) (*TokenPayload, error)
 }
 
