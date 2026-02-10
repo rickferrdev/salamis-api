@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/rickferrdev/salamis-api/compare/v1.5.0...v1.6.0) (2026-02-10)
+
+
+### Features
+
+* introduces MongoDB integration and refactors core components to use string-based IDs. ([#17](https://github.com/rickferrdev/salamis-api/issues/17)) ([06b8bde](https://github.com/rickferrdev/salamis-api/commit/06b8bde591760f24f471203679d120808a71f35d))
+
 ## [1.5.0](https://github.com/rickferrdev/salamis-api/compare/v1.4.0...v1.5.0) (2026-02-05)
 
 
