@@ -19,11 +19,11 @@ func NewTokenizer(Env *config.Env) ports.Tokenizer {
 }
 
 type UserClaims struct {
-	UserID uint
+	UserID string
 	jwt.RegisteredClaims
 }
 
-func (u *Tokenizer) Generate(userID uint) (*ports.TokenizerOutput, error) {
+func (u *Tokenizer) Generate(userID string) (*ports.TokenizerOutput, error) {
 	tokenJWT := jwt.NewWithClaims(jwt.SigningMethodHS256, &UserClaims{
 		UserID: userID,
 		RegisteredClaims: jwt.RegisteredClaims{
