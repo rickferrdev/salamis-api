@@ -1,0 +1,43 @@
+services:
+  salamis-api:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      # These environment variables will be passed to your Go application
+      # Ensure these match what your application expects for database connection
+      MONGO_URI: "mongodb://mongodb:27017"
+      # Additional environment variables from .env.example can be added here
+      # For example:
+      # JWT_SECRET: "your_jwt_secret"
+    depends_on:
+      - mongodb
+    networks:
+      - salamis-network
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      # MongoDB root user and password for initial setup
+      MONGO_INITDB_ROOT_USERNAME: rootuser
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      # Default database name
+      MONGO_DB: salamisdb
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - salamis-network
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
+
+
+networks:
+  salamis-network:
+    driver: bridge
